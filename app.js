@@ -14,30 +14,37 @@ const io = require('socket.io')(server);
 
 const request = require('request');
 const cheerio = require('cheerio');
-//https://www.youtube.com/playlist?list=PLCd1VmF_W0mzDbbIpJh7pBm26H663Yn37
-const url = 'https://www.youtube.com/playlist?list=PLCd1VmF_W0mzDbbIpJh7pBm26H663Yn37';
-// const url = 'https://www.youtube.com/playlist?list=PLu-X8ZEXML8p2trBAf08UYkabKt-82te2&disable_polymer=true';
-request(url, (err, res, body) => {
+const axios = require('axios');
 
-  const $ = cheerio.load(body);
-  let songs_titles = [];
+const url = 'https://www.youtube.com/playlist?list=PLCd1VmF_W0mzDbbIpJh7pBm26H663Yn37';
+
+async function getPlayListInfo(url) {
+  const body = await axios.get(url);
+  const $ = cheerio.load(body.data)
+  // console.log($);
+
+  let songs_info = {
+    titles: [],
+  };
   let title_odd_counter = 0;
   $('#pl-load-more-destination tr .pl-video-title a').each(function (i, elem) {
     if (title_odd_counter % 2 === 0) {
       const title = $(this).text().split('\n');
-      songs_titles.push(title[1].trim());
+      songs_info.titles.push(title[1].trim());
     }
     title_odd_counter++;
-  })
-  console.log(songs_titles);
-})
-
+  });
+  return songs_info;
+}
 
 io.on('connection', async (socket) => {
   console.log("+1");
 
-  socket.on("getPlaylistUrl", (url) => {
+  socket.on("getPlaylistUrl", async (url) => {
     socket.emit("generatePlayer", url);
+    const songs_info = await getPlayListInfo(url);
+    console.log(songs_info);
+    socket.emit("generateSongsTitle", songs_info);
   });
 })
 server.listen(3001);
