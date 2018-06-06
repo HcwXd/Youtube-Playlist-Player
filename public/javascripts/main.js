@@ -56,21 +56,72 @@ var popularWrap = document.querySelector(".popular-wrap")
 ];*/
 
 const albumCollection = [{
-    cover: 'https://i.ytimg.com/vi/gACUUzuBOU8/hqdefault.jpg?sqp=-oaymwEXCNACELwBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLBD5oSO0ZWp0NuhZ5NCa42oxe3DIA',
-    url: 'https://www.youtube.com/playlist?list=PLDev3jvNNbr4LOrPK0jS_NtDJB6bqYvo_'
-}, {
-    cover: 'https://i.ytimg.com/vi/x0zLjkbt_dw/hqdefault.jpg?sqp=-oaymwEXCNACELwBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLDVZjNmIkT1YSxjRX3VYnwvFy4tlg',
-    url: 'https://www.youtube.com/playlist?list=PLMI0X_0iX6mp5Y4yjIuWwaDwqvDFTBBs3'
-}, {
-    cover: 'https://i.ytimg.com/vi/mfM2DVWPrJU/hqdefault.jpg?sqp=-oaymwEXCNACELwBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLB4byZDf0d9GqurawPYyQbEo6KLCw',
-    url: 'https://www.youtube.com/playlist?list=PLZf9XXbK2hZWzlQjn72dBizkNrsCLYDf4'
-}, {
-    cover: 'https://i.ytimg.com/vi/QznBis-VT6Q/hqdefault.jpg?sqp=-oaymwEXCNACELwBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLBQZe_w7Er0_Vtghm16KfvhdEF-Lg',
-    url: 'https://www.youtube.com/playlist?list=PLx8X6gKcEQzParIANOgeuVclyl6Y1eO8q'
-}, {
-    cover: 'https://i.ytimg.com/vi/aCrOi7vaWRE/hqdefault.jpg?sqp=-oaymwEXCNACELwBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLCzOt4_UHvnj0s_l-tvJ4c4upV1Ug',
-    url: 'https://www.youtube.com/playlist?list=PLbIhf4uSd-jelZh_wX4p920cncfoUYfdd'
-}]
+        cover: 'https://i.ytimg.com/vi/gACUUzuBOU8/hqdefault.jpg?sqp=-oaymwEXCNACELwBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLBD5oSO0ZWp0NuhZ5NCa42oxe3DIA',
+        url: 'https://www.youtube.com/playlist?list=PLDev3jvNNbr4LOrPK0jS_NtDJB6bqYvo_'
+    }, {
+        cover: 'https://i.ytimg.com/vi/x0zLjkbt_dw/hqdefault.jpg?sqp=-oaymwEXCNACELwBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLDVZjNmIkT1YSxjRX3VYnwvFy4tlg',
+        url: 'https://www.youtube.com/playlist?list=PLMI0X_0iX6mp5Y4yjIuWwaDwqvDFTBBs3'
+    }, {
+        cover: 'https://i.ytimg.com/vi/mfM2DVWPrJU/hqdefault.jpg?sqp=-oaymwEXCNACELwBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLB4byZDf0d9GqurawPYyQbEo6KLCw',
+        url: 'https://www.youtube.com/playlist?list=PLZf9XXbK2hZWzlQjn72dBizkNrsCLYDf4'
+    }, {
+        cover: 'https://i.ytimg.com/vi/QznBis-VT6Q/hqdefault.jpg?sqp=-oaymwEXCNACELwBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLBQZe_w7Er0_Vtghm16KfvhdEF-Lg',
+        url: 'https://www.youtube.com/playlist?list=PLx8X6gKcEQzParIANOgeuVclyl6Y1eO8q'
+    }, {
+        cover: 'https://i.ytimg.com/vi/aCrOi7vaWRE/hqdefault.jpg?sqp=-oaymwEXCNACELwBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLCzOt4_UHvnj0s_l-tvJ4c4upV1Ug',
+        url: 'https://www.youtube.com/playlist?list=PLbIhf4uSd-jelZh_wX4p920cncfoUYfdd'
+    }, {
+        cover: 'https://i.ytimg.com/vi/C8AQPGKcZOk/hqdefault.jpg?sqp=-oaymwEXCNACELwBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLCRC4yrEvF3MqRQicRwzIgNtTA0BQ',
+        url: 'https://www.youtube.com/playlist?list=PLo30Gy5IvXQ_iWUQhjEfP6A2QgO6fkanH'
+    },
+    {
+        cover: 'https://i.ytimg.com/vi/k2qgadSvNyU/hqdefault.jpg?sqp=-oaymwEXCNACELwBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLBjquG6Np4YKRAx74H6HbVX0nLSTw',
+        url: 'https://www.youtube.com/playlist?list=PLNrotoZZ8Baoy7UXzs7DOAV17ciPSpXGg'
+    },
+    {
+        cover: 'https://i.ytimg.com/vi/zRHNi3QfFlE/hqdefault.jpg?sqp=-oaymwEXCNACELwBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLBv5hXr2Xb3ukH2MHAy3XBE2k8IqQ',
+        url: 'https://www.youtube.com/playlist?list=PL_z2rRJd3xt4pdxj-Poa_lChQXY3yOk05'
+    }, {
+        cover: 'https://i.ytimg.com/vi/qp1JOAdF4kM/hqdefault.jpg?sqp=-oaymwEXCNACELwBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLBFmoSBXKf0Uxx0ZxEzxx_Pmwawig',
+        url: 'https://www.youtube.com/playlist?list=PL8B7A3CFFEBE9CCD8'
+    }, {
+        cover: 'https://i.ytimg.com/vi/iIyE3EDCigE/hqdefault.jpg?sqp=-oaymwEXCNACELwBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLArgVWU2BSslsXPqbYLQGPwRLk_Bg',
+        url: 'https://www.youtube.com/playlist?list=PL80A243D9C542F276'
+    }, {
+        cover: 'https://i.ytimg.com/vi/KXdW0g6jAxE/hqdefault.jpg?sqp=-oaymwEXCNACELwBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLDOO1MH9BRn8QH7ezB7DpPvuDMajQ',
+        url: 'https://www.youtube.com/playlist?list=PLkLZNGcjKAQ_T6e9HD9YRiUcE85vouttE'
+    }, {
+        cover: 'https://i.ytimg.com/vi/z07Zm0jk6XA/hqdefault.jpg?sqp=-oaymwEXCNACELwBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLClxQVYXv2euhI4ZG3C6in65hAWwA',
+        url: 'https://www.youtube.com/playlist?list=PLn8lpQwVMAVuh2ds-Q8Hu4ygs_5aziJMi'
+    }, {
+        cover: 'https://i.ytimg.com/vi/djscsRpjGc4/hqdefault.jpg?sqp=-oaymwEXCNACELwBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLARJ5N5NoO6MeKwyrjr6NJ8wJGmCw',
+        url: 'https://www.youtube.com/playlist?list=PLC1uUM4twa8ihGXl3a3hEC7baryJ5kU9_'
+    }, {
+        cover: 'https://i.ytimg.com/vi/Tm8LGxTLtQk/hqdefault.jpg?sqp=-oaymwEXCNACELwBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLAAh_hNRw_Se8RJH02PhXOYiwGlqw',
+        url: 'https://www.youtube.com/playlist?list=PLlqZM4covn1GspPLr5DCHTtafLkAHxUid'
+    }, {
+        cover: 'https://i.ytimg.com/vi/3BXDsVD6O10/hqdefault.jpg?sqp=-oaymwEXCNACELwBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLCpn5P_a_qw2SLd1Dfl6GTH4_81TA',
+        url: 'https://www.youtube.com/playlist?list=PL3-sRm8xAzY8FmvSc0GpRFcWqgL2EpuRT'
+    }, {
+        cover: 'https://i.ytimg.com/vi/HSyKd5-_yjY/hqdefault.jpg?sqp=-oaymwEXCNACELwBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLA7mD7ZJllVf7MGDcp53xtBGEADIQ',
+        url: 'https://www.youtube.com/playlist?list=PL_nlqDZHeAYP6rjTxOprTV3k9q8qiHxO5'
+    }, {
+        cover: 'https://i.ytimg.com/vi/4LFGqokvOwI/hqdefault.jpg?sqp=-oaymwEXCNACELwBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLDtVUAga0Rv6DNyV4R97vDOhyX8ew',
+        url: 'https://www.youtube.com/playlist?list=PL1j5Txu5FZPCsu6OEmf_TbfRZS6uGngMr'
+    }, {
+        cover: 'https://i.ytimg.com/vi/b45rzwIBS_Y/hqdefault.jpg?sqp=-oaymwEXCNACELwBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLBJW1W8O5Q-Ce80zmg9wQyfp90-_g',
+        url: 'https://www.youtube.com/playlist?list=PL81_CtYCym2_indonS249kcDhb04JVSy6'
+    }, {
+        cover: 'https://i.ytimg.com/vi/vthI-xwwvQ0/hqdefault.jpg?sqp=-oaymwEXCNACELwBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLCM0YuythfRTQU-7ZF3PJ_vua1TQQ',
+        url: 'https://www.youtube.com/playlist?list=PLWnVxuqvY7JhVvW831x9XyhMry0ZaCkxs'
+    }, {
+        cover: 'https://i.ytimg.com/vi/-MvfPBAJCrw/hqdefault.jpg?sqp=-oaymwEXCNACELwBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLBZ1pHFmaM1wp7DxrxRz3pq6N6JqA',
+        url: 'https://www.youtube.com/playlist?list=PLCd1VmF_W0mzDbbIpJh7pBm26H663Yn37'
+    }, {
+        cover: 'https://i.ytimg.com/vi/AZ1pHmWhIuY/hqdefault.jpg?sqp=-oaymwEXCNACELwBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLA2AREGwTYWRkJTganL52LA8pNkYg',
+        url: 'https://www.youtube.com/playlist?list=PLCd1VmF_W0mzsac1aEM03cFfmav3WJeGi'
+    },
+]
 
 function random(min, max) {
     var num = Math.floor(Math.random() * (max - min)) + min;
@@ -78,13 +129,14 @@ function random(min, max) {
 }
 
 for (let i = 0; i < albumCollection.length; i++) {
-    var album = document.createElement("DIV");
+    var album = document.createElement("A");
     album.className = "album";
     var css_top = random(0, 80);
     var css_right = random(0, 80);
     album.style.top = css_top + "%";
     album.style.right = css_right + "%";
     album.style.backgroundImage = `url(${albumCollection[i].cover})`
+    album.setAttribute("href", "#playlist");
     var delay = random(-6, 0)
     album.style.animationDelay = delay + "s";
     popularWrap.appendChild(album);
