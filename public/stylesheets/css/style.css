@@ -96,12 +96,12 @@ html, body {
       transition-duration: 1s;
       cursor: pointer; }
 
-#favorite {
+#playlist {
   position: relative;
   background-color: #1a1a1a;
   display: flex;
   justify-content: space-around; }
-  #favorite .section-name {
+  #playlist .section-name {
     color: #ff6e3a;
     letter-spacing: 1px;
     position: absolute;
@@ -110,47 +110,87 @@ html, body {
     font-size: 35px;
     font-weight: 700;
     border-bottom: 2px solid #ff6e3a; }
-  #favorite .class-wrap {
+  #playlist .class-wrap {
     display: flex;
     margin-top: 15%;
     justify-content: space-between;
     width: 80%; }
-    #favorite .class-wrap .class-list .list-header {
-      border: 1px solid #aaa;
+    #playlist .class-wrap .playlist_wrap .input_hint {
+      padding: 0px 15px;
+      font-size: 20px; }
+    #playlist .class-wrap .playlist_wrap .input_wrap {
       display: flex;
-      justify-content: space-between;
-      font-size: 20px;
-      padding: 5px 10px;
-      border-radius: 3px; }
-      #favorite .class-wrap .class-list .list-header .header-name, #favorite .class-wrap .class-list .list-header .header-status {
-        display: inline-block; }
-    #favorite .class-wrap .class-list .list-member {
-      display: block;
-      border: 1px solid #aaa;
-      border-top: 0px solid #000;
-      padding: 10px 10px 5px 10px;
-      border-radius: 3px; }
-      #favorite .class-wrap .class-list .list-member .song-name {
-        margin-bottom: 10px;
-        font-size: 15px;
-        border-bottom: 1px solid #aaa;
-        cursor: pointer; }
-  #favorite .music-player-wrap {
+      padding: 15px; }
+      #playlist .class-wrap .playlist_wrap .input_wrap .playlist_generate_button {
+        border: 2px solid #bebebe;
+        border-left: 1px solid #bebebe;
+        display: inline-block;
+        padding: 10px;
+        width: 10%;
+        font-size: 12px;
+        background-color: #1a1a1a;
+        color: #bebebe;
+        font-size: 20px;
+        font-weight: 700;
+        border-radius: 0 5px 5px 0; }
+      #playlist .class-wrap .playlist_wrap .input_wrap .playlist_url_input {
+        display: inline-block;
+        border: 2px solid #bebebe;
+        border-right: 1px solid #bebebe;
+        background-color: #1a1a1a;
+        color: #bebebe;
+        width: 90%;
+        font-size: 20px;
+        border-radius: 5px 0 0 5px; }
+        #playlist .class-wrap .playlist_wrap .input_wrap .playlist_url_input:focus {
+          outline-color: #2c2d30;
+          outline-width: 0px;
+          box-shadow: none;
+          color: #bebebe; }
+    #playlist .class-wrap .playlist_wrap .playlist_container {
+      width: 534px;
+      height: 300px; }
+    #playlist .class-wrap .class-list {
+      display: none;
+      overflow: scroll;
+      max-height: 70%;
+      position: relative; }
+      #playlist .class-wrap .class-list .list-header {
+        border: 1px solid #aaa;
+        display: flex;
+        justify-content: space-between;
+        font-size: 20px;
+        padding: 5px 10px;
+        border-radius: 3px; }
+        #playlist .class-wrap .class-list .list-header .header-name, #playlist .class-wrap .class-list .list-header .header-status {
+          display: inline-block; }
+      #playlist .class-wrap .class-list .list-member {
+        display: block;
+        border: 1px solid #aaa;
+        border-top: 0px solid #000;
+        padding: 10px 10px 5px 10px;
+        border-radius: 3px; }
+        #playlist .class-wrap .class-list .list-member .song-name {
+          margin-bottom: 10px;
+          font-size: 15px;
+          border-bottom: 1px solid #aaa;
+          cursor: pointer; }
+  #playlist .music-player-wrap {
     border: 1px solid #aaa;
     position: absolute;
     bottom: 10%;
     width: 70%;
     padding: 10px; }
-    #favorite .music-player-wrap .back-btn, #favorite .music-player-wrap .play-btn, #favorite .music-player-wrap .next-btn {
+    #playlist .music-player-wrap .back-btn, #playlist .music-player-wrap .play-btn, #playlist .music-player-wrap .next-btn {
       display: inline-block;
       padding: 5px 10px;
       border: 1px solid #aaa;
       border-radius: 3px; }
-    #favorite .music-player-wrap .music-progress {
+    #playlist .music-player-wrap .music-progress {
       display: inline-block;
       border: 1px solid #aaa;
       width: 80%; }
-      #favorite .music-player-wrap .music-progress hr {
+      #playlist .music-player-wrap .music-progress hr {
         width: 95%; }
 
 #history {
@@ -212,34 +252,5 @@ html, body {
   100% {
     transform: translateY(-100%);
     opacity: 0; } }
-button {
-  padding: 10px;
-  width: 10%;
-  font-size: 12px; }
-
-input {
-  border: 1px solid #000;
-  width: 90%;
-  font-size: 12px; }
-
-.video {
-  padding: 10px 30px;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%); }
-  .video .video_container {
-    border: 1px solid #000;
-    width: 560px;
-    height: 315px; }
-
-.playlist {
-  padding: 10px 30px;
-  position: absolute;
-  left: 50%;
-  transform: translate(-50%, 100%); }
-  .playlist .playlist_container {
-    border: 1px solid #000;
-    width: 356px;
-    height: 200px; }
 
 /*# sourceMappingURL=style.css.map */

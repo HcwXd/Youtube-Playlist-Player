@@ -19,8 +19,8 @@
     <div class="nav-item popular">
       <a href="#popular">Popular</a>
     </div>
-    <div class="nav-item favorite">
-      <a href="#favorite"> Favorite</a>
+    <div class="nav-item playlist">
+      <a href="#playlist">Playlist</a>
     </div>
     <div class="nav-item history">
       <a href="#history">History</a>
@@ -40,54 +40,30 @@
     <div class="section-name">Popular</div>
     <div class="popular-wrap"></div>
   </div>
-  <div class="section" id="favorite">
-    <div class="section-name">Favorite</div>
+  <div class="section" id="playlist">
+    <div class="section-name">Playlist</div>
     <div class="class-wrap">
+      <div class="playlist_wrap">
+        <div class="input_hint">Please enter your youtube playlist URL</div>
+        <div class="input_wrap">
+          <input class="playlist_url_input" type="text" />
+          <button class="playlist_generate_button">></button>
+        </div>
+        <div class="playlist_container"></div>
+      </div>
       <div class="class-list">
         <div class="list-header">
-          <div class="header-name">Rap</div>
+          <div class="header-name">Playlist</div>
           <div class="header-status">-</div>
         </div>
         <div class="list-member">
-          <div class="song-name">Eminem - Lose Yourself</div>
+          <!-- <div class="song-name">Eminem - Lose Yourself</div>
           <div class="song-name">Wiz Khalifa - Roll Up</div>
           <div class="song-name">GorDon - Sample This</div>
           <div class="song-name">Chance the Rapper - Same Drugs</div>
           <div class="song-name">Aminé - Caroline</div>
-          <div class="song-name">Kendrick Lamar - HUMBLE</div>
+          <div class="song-name">Kendrick Lamar - HUMBLE</div> -->
         </div>
-      </div>
-      <div class="class-list">
-        <div class="list-header">
-          <div class="header-name">Indie</div>
-          <div class="header-status">-</div>
-        </div>
-        <div class="list-member">
-          <div class="song-name">The xx - On Hold</div>
-          <div class="song-name">The xx - Intro</div>
-          <div class="song-name">Fall Out Boy - I don't care</div>
-          <div class="song-name">Foster The People - Sit Next to Me</div>
-        </div>
-      </div>
-      <div class="class-list">
-        <div class="list-header">
-          <div class="header-name">Classic</div>
-          <div class="header-status">-</div>
-        </div>
-        <div class="list-member">
-          <div class="song-name">Oasis - Don’t Look Back In Anger</div>
-          <div class="song-name">Avenged Sevenfold - Dear God</div>
-          <div class="song-name">Guns N' Roses - Sweet Child O' Mine</div>
-          <div class="song-name">Eagles - Hotel California</div>
-        </div>
-      </div>
-    </div>
-    <div class="music-player-wrap">
-      <div class="back-btn">↻</div>
-      <div class="play-btn">▶</div>
-      <div class="next-btn">▸▸</div>
-      <div class="music-progress">
-        <hr/>
       </div>
     </div>
   </div>
@@ -155,12 +131,6 @@
       </div>
     </div>
   </div>
-  <div class="playlist">
-    <input class="playlist_url_input" type="text" />
-    <button class="playlist_generate_button">Go</button>
-    <div class="playlist_container"></div>
-  </div>
-  <div class="title_container"></div>
   <script src="/javascripts/main.js"></script>
 
 </body>

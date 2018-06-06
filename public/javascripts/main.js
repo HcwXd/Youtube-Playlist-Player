@@ -7,33 +7,20 @@ const playlist_container = document.querySelector('.playlist_container');
 
 playlist_generate_button.addEventListener('click', () => {
     const playlistUrl = playlist_url_input.value;
+    playlist_url_input.value = "";
     socket.emit("getPlaylistUrl", playlistUrl);
-
-
-
-
-
-    /*
-    var sp_url = playlist_url_input.value.split('?list=');
-    var em_url = sp_url[sp_url.length - 1];
-    var final_url = em_url.split('&')[0];
-    console.log(final_url);
-
-    var htmll = `<iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=${final_url}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>`;
-    playlist_container.innerHTML = htmll;
-    */
 })
 socket.on("generatePlayer", (playlistUrl) => {
     var sp_url = playlistUrl.split('?list=');
     var em_url = sp_url[sp_url.length - 1];
     var final_url = em_url.split('&')[0];
     console.log(final_url);
-    var htmll = `<iframe width="356" height="200" src="https://www.youtube.com/embed/videoseries?list=${final_url}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>`;
+    var htmll = `<iframe width="534" height="300" src="https://www.youtube.com/embed/videoseries?list=${final_url}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>`;
     playlist_container.innerHTML = htmll;
 })
 
-socket.on("generateSongsTitle", (songs_titles) => {
-    console.log(songs_titles);
+socket.on("generateSongsTitle", (songs_info) => {
+    renderSongsTitle(songs_info);
 })
 
 var navBar = document.querySelector(".nav");
@@ -84,4 +71,17 @@ for (let i = 0; i < albumCovers.length; i++) {
     var delay = random(-6, 0)
     album.style.animationDelay = delay + "s";
     popularWrap.appendChild(album);
+}
+
+
+function renderSongsTitle(songs_info) {
+    const class_list = document.querySelector('.class-list');
+    const list_member = document.querySelector('.list-member');
+    class_list.style.display = "block";
+    for (let i = 0; i < songs_info.titles.length; i++) {
+        var title = document.createElement("DIV");
+        title.className = "song-name";
+        title.innerHTML = songs_info.titles[i];
+        list_member.appendChild(title);
+    }
 }
