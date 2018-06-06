@@ -38,8 +38,6 @@ async function getPlayListInfo(url) {
 }
 
 io.on('connection', async (socket) => {
-  console.log("+1");
-
   socket.on("getPlaylistUrl", async (url) => {
     socket.emit("generatePlayer", url);
     const songs_info = await getPlayListInfo(url);

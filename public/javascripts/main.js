@@ -27,7 +27,7 @@ var navBar = document.querySelector(".nav");
 var homeSection = document.querySelector("#history");
 var popularWrap = document.querySelector(".popular-wrap")
 
-var albumCovers = ['https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGZGuHAbh6c-PkD_uaEnt7IqIX08kghWFYGl9lOYT7qIY9HIyJ',
+/*var albumCovers = ['https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGZGuHAbh6c-PkD_uaEnt7IqIX08kghWFYGl9lOYT7qIY9HIyJ',
     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4XJZ1Che_iC4JlyCoYpBh2Lqxc-dk1nLtBfeN4vhOtmdqisYnaA',
     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyv8-EUSQdGQBWWPcqKT4OeNcBN2iIZgE9yf90MnYZNxtN_-BY_Q',
     'https://images-na.ssl-images-amazon.com/images/I/71LiPpRKmhL._SY355_.jpg',
@@ -53,35 +53,59 @@ var albumCovers = ['https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGZGuH
     'https://shortlist.imgix.net/app/uploads/2015/01/24184408/the-50-greatest-rock-albums-ever-41.jpg?w=1200&h=1&fit=max&auto=format%2Ccompress',
     'http://bestrocklist.com/files/Album%20Covers/brl%2025.jpg',
     'https://images.rapgenius.com/1ea3ec7f9117443a7ad0f3655d1fa856.567x566x1.jpg'
-];
+];*/
+
+const albumCollection = [{
+    cover: 'https://i.ytimg.com/vi/gACUUzuBOU8/hqdefault.jpg?sqp=-oaymwEXCNACELwBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLBD5oSO0ZWp0NuhZ5NCa42oxe3DIA',
+    url: 'https://www.youtube.com/playlist?list=PLDev3jvNNbr4LOrPK0jS_NtDJB6bqYvo_'
+}, {
+    cover: 'https://i.ytimg.com/vi/x0zLjkbt_dw/hqdefault.jpg?sqp=-oaymwEXCNACELwBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLDVZjNmIkT1YSxjRX3VYnwvFy4tlg',
+    url: 'https://www.youtube.com/playlist?list=PLMI0X_0iX6mp5Y4yjIuWwaDwqvDFTBBs3'
+}, {
+    cover: 'https://i.ytimg.com/vi/mfM2DVWPrJU/hqdefault.jpg?sqp=-oaymwEXCNACELwBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLB4byZDf0d9GqurawPYyQbEo6KLCw',
+    url: 'https://www.youtube.com/playlist?list=PLZf9XXbK2hZWzlQjn72dBizkNrsCLYDf4'
+}, {
+    cover: 'https://i.ytimg.com/vi/QznBis-VT6Q/hqdefault.jpg?sqp=-oaymwEXCNACELwBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLBQZe_w7Er0_Vtghm16KfvhdEF-Lg',
+    url: 'https://www.youtube.com/playlist?list=PLx8X6gKcEQzParIANOgeuVclyl6Y1eO8q'
+}, {
+    cover: 'https://i.ytimg.com/vi/aCrOi7vaWRE/hqdefault.jpg?sqp=-oaymwEXCNACELwBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLCzOt4_UHvnj0s_l-tvJ4c4upV1Ug',
+    url: 'https://www.youtube.com/playlist?list=PLbIhf4uSd-jelZh_wX4p920cncfoUYfdd'
+}]
 
 function random(min, max) {
     var num = Math.floor(Math.random() * (max - min)) + min;
     return num;
 }
 
-for (let i = 0; i < albumCovers.length; i++) {
+for (let i = 0; i < albumCollection.length; i++) {
     var album = document.createElement("DIV");
     album.className = "album";
     var css_top = random(0, 80);
     var css_right = random(0, 80);
     album.style.top = css_top + "%";
     album.style.right = css_right + "%";
-    album.style.backgroundImage = `url(${albumCovers[i]})`
+    album.style.backgroundImage = `url(${albumCollection[i].cover})`
     var delay = random(-6, 0)
     album.style.animationDelay = delay + "s";
     popularWrap.appendChild(album);
+    album.addEventListener("click", () => {
+        socket.emit("getPlaylistUrl", albumCollection[i].url);
+    })
 }
+
+
 
 
 function renderSongsTitle(songs_info) {
     const class_list = document.querySelector('.class-list');
     const list_member = document.querySelector('.list-member');
+    list_member.innerHTML = "";
     class_list.style.display = "block";
     for (let i = 0; i < songs_info.titles.length; i++) {
         var title = document.createElement("DIV");
         title.className = "song-name";
         title.innerHTML = songs_info.titles[i];
         list_member.appendChild(title);
+
     }
 }

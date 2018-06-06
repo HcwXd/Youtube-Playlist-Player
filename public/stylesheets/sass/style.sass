@@ -101,9 +101,10 @@ html,body
       animation-timing-function: linear
       transition-duration: 1s
       cursor: pointer
-      // &:hover
-      //   opacity: 1
-
+      &:hover
+        animation-play-state: paused
+        z-index: 100
+        opacity: 1
 
 
 #playlist
@@ -159,13 +160,13 @@ html,body
             box-shadow: none
             color: $txt_white
       .playlist_container
-        // border: 1px solid #000
         width: 534px
         height: 300px
     .class-list
       display: none
       overflow: scroll
       max-height: 70%
+      max-width: 40%
       position: relative
       .list-header
         border: 1px solid #aaa
